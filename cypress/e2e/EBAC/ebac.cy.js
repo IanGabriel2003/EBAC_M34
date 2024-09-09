@@ -5,12 +5,12 @@ describe('Teste para o site', () => {
         cy.visit('https://agenda-contatos-react.vercel.app/')
     })
 
-    it('Deve excluir 2 contatos', () => {
+    it('Deve excluir 2 contatos REMOÇÃO DE CONTATO', () => {
         cy.get('.delete').eq(1).click()
         cy.get('.delete').eq(0).click()
     })
 
-    it('Deve adicionar 2 novos contato', () => {
+    it('Deve adicionar 2 novos contato INCLUSÃO', () => {
         cy.get('input[type="text"]').type('Ian Gabriel')
         cy.get('input[type="email"]').type('emailteste@gmail.com')
         cy.get('input[type="tel"]').type('12 34567890')
@@ -22,7 +22,7 @@ describe('Teste para o site', () => {
         cy.get('.adicionar').click()
     })
 
-    it('Deve editar o primeiro contato', () => {
+    it('Deve editar o primeiro contato ALTERAÇÃO', () => {
         cy.get('.edit').first().click()
         cy.get('input[type="text"]').clear().type('Pedro')
         cy.get('input[type="email"]').clear().type('pedrin@gmail.com')
